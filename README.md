@@ -15,15 +15,23 @@ Po přidání přepněte filtr pluginů z „Nainstalováno“ na „Dostupné�
 
 | Plugin | Verze | Jellyfin | Popis |
 | --- | --- | --- | --- |
-| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.4.0.0) | 0.4.0.0 | 10.11.6 | CBZ metadata, obálky, AniList a ruční přiřazování sérií |
+| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.5.0.0) | 0.5.0.0 | 10.11.6 | CBZ metadata, AniList, detail série, průběh čtení a pokračování |
 
 Ve verzi 0.2.1.0 stačí v nastavení Manga zaškrtnout existující knihovnu typu Knihy. Cesty se přebírají automaticky z Jellyfinu, včetně více složek a pozdějších změn. Starší ručně zadané cesty zůstávají zachované v pokročilém nastavení; po výběru knihovny je lze vymazat. Bez výběru knihovny i bez ručních cest se soubory nezpracovávají. Po aktualizaci restartujte Jellyfin a obnovte stránku nastavení.
 
 Verze 0.2.1.0 opravuje chybu `toLowerCase is not a function` při načítání knihoven. Po aktualizaci a restartu obnovte nastavení pomocí Ctrl+F5.
 
-Ověřeno 44 automatickými testy pluginu, dvěma testy formuláře a testem skutečného webového rozhraní na odděleném Jellyfinu 10.11.6: otevření série, pořadí svazků a CBZ čtečka. Ověřen byl i sken série s jediným Vol. 2 a následné přidání dalších svazků. Uživatelský server se aktualizuje přes katalog. Čtení zajišťuje vestavěná čtečka Jellyfinu.
+Ověřeno 45 automatickými testy pluginu, šesti testy formuláře, výběru rozčteného svazku a skutečného webu na odděleném Jellyfinu 10.11.6. Živé testy zahrnují otevření série, pořadí svazků, uložení stránky a pokračování v novém okně prohlížeče. Ověřeno také oddělení pozic mezi uživateli. Uživatelský server se aktualizuje přes katalog. Čtení zajišťuje vestavěná čtečka Jellyfinu.
 
 Pro knihovnu typu Knihy povolte Manga CBZ, Manga AniList a Manga CBZ cover. Ručně upravená metadata zamkněte v editoru Jellyfinu. Podrobný návod je v README uvnitř instalačního ZIPu.
+
+## Průběh čtení ve verzi 0.5.0.0
+
+Na kartách svazků a jejich detailu se zobrazuje aktuální stránka, počet stran a procenta. Na detailu série přibylo tlačítko **Pokračovat ve čtení**, které otevře poslední rozčtený svazek na uložené stránce. Pokud není žádný rozčtený, nabídne první nepřečtený svazek. Pozice a čas čtení se ukládají na serveru zvlášť pro každého uživatele.
+
+Po aktualizaci **restartujte Jellyfin**, jednou spusťte **úplnou obnovu metadat knihovny** pro načtení počtu stran a obnovte web pomocí **Ctrl+F5**. Pokud máte vlastní výběr poskytovatelů, povolte **Manga reading progress**. Pro tlačítko pokračování ponechte zapnutý detail série. Stav Přečteno vychází z označení přečtení v Jellyfinu.
+
+Nové ovládání funguje ve **webu poskytovaném serverem Jellyfinu**. Plugin přidává skript do odpovědi stránky bez úprav instalovaných souborů. Samostatně hostovaný web a nativní mobilní/TV aplikace používají vlastní rozhraní.
 
 ## Detail série ve verzi 0.4.0.0
 
