@@ -15,7 +15,7 @@ Po přidání přepněte filtr pluginů z „Nainstalováno“ na „Dostupné�
 
 | Plugin | Verze | Jellyfin | Popis |
 | --- | --- | --- | --- |
-| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.6.0.0) | 0.6.0.0 | 10.11.6 | CBZ metadata, AniList, detail série a čtení po stránkách s uloženou pozicí |
+| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.7.0.0) | 0.7.0.0 | 10.11.6 | CBZ metadata, AniList, detail série a čtení po stránkách s uloženou pozicí |
 
 Ve verzi 0.2.1.0 stačí v nastavení Manga zaškrtnout existující knihovnu typu Knihy. Cesty se přebírají automaticky z Jellyfinu, včetně více složek a pozdějších změn. Starší ručně zadané cesty zůstávají zachované v pokročilém nastavení; po výběru knihovny je lze vymazat. Bez výběru knihovny i bez ručních cest se soubory nezpracovávají. Po aktualizaci restartujte Jellyfin a obnovte stránku nastavení.
 
@@ -25,11 +25,17 @@ Ověřeno 50 testy pluginu a sedmi testy formuláře, výběru rozčteného svaz
 
 Pro knihovnu typu Knihy povolte Manga CBZ, Manga AniList a Manga CBZ cover. Ručně upravená metadata zamkněte v editoru Jellyfinu. Podrobný návod je v README uvnitř instalačního ZIPu.
 
+## Nativní vzhled ve verzi 0.7.0.0
+
+Průběh čtení je tenká čára na spodní hraně obálky, se stejnými styly a barvou motivu jako filmové karty Jellyfinu. Zobrazuje se na detailu svazku, v sérii i na kartách domovské obrazovky. Přesná stránka a procenta jsou dostupné po najetí na čáru a čtečkám obrazovky. Samostatný blok pod detailem a velká modrá tlačítka byly odstraněny.
+
+Čtení spouští nativní **▶**; na sérii otevře poslední rozčtený nebo první nepřečtený svazek. Původní čtečka je dostupná malou ikonou knihy ve stejné řadě ovládání. Ověřeno na desktopu i mobilní šířce v Jellyfinu 10.11.6, včetně zarovnání čáry a pokračování ve čtení. Po aktualizaci restartujte server a obnovte web pomocí Ctrl+F5.
+
 ## Čtení po stránkách ve verzi 0.6.0.0
 
 Nová čtečka posílá ze serveru jednotlivé obrázky z CBZ. První stránka se otevře bez stahování a rozbalování celého archivu v prohlížeči. Po jejím zobrazení se připraví dvě následující stránky; mezipaměť drží nejvýše čtyři obrázky. Při skoku se nepotřebné přenosy zruší. Server CBZ nerozbaluje na disk.
 
-Použijte **Číst po stránkách** na detailu svazku, běžné tlačítko čtení nebo **Pokračovat ve čtení** na sérii. Ovládání nabízí šipky, číslo stránky, gesta, směr zprava doleva a přizpůsobení šířce. Pozice se ukládá až po úspěšném zobrazení stránky. Při chybě lze načtení zopakovat. **Původní čtečka** je nadále dostupná jako alternativa a stahuje celý soubor.
+Použijte běžné tlačítko **▶** na detailu svazku nebo série; naváže na uloženou stránku. Ovládání nabízí šipky, číslo stránky, gesta, směr zprava doleva a přizpůsobení šířce. Pozice se ukládá až po úspěšném zobrazení stránky. Při chybě lze načtení zopakovat. **Původní čtečka** je nadále dostupná jako alternativa a stahuje celý soubor.
 
 Aktualizujte plugin, **restartujte Jellyfin a načtěte web přes Ctrl+F5**. U svazků, které ještě nemají průběh čtení z verze 0.5, jednou obnovte metadata. Platí pro web poskytovaný serverem Jellyfinu; nativní aplikace mají vlastní čtečky. Každý požadavek vyžaduje přihlášení a oprávnění k danému svazku. Podrobný návod a omezení jsou v README instalačního ZIPu.
 
