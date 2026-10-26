@@ -1,0 +1,24 @@
+{
+  "tag": "manga-v0.6.0.0",
+  "assetName": "Jellyfin.Plugin.Manga_0.6.0.0.zip",
+  "sha256": "02bc6870c5100bee2105754fe30b975f9bf1b1dfb976f438d19fb9122a2cfeed",
+  "plugin": {
+    "guid": "9ef85dfa-392c-4d3f-8c89-60edbfd72e81",
+    "name": "Manga",
+    "description": "Local CBZ metadata, covers and AniList matching for manga.",
+    "overview": "Manga for Jellyfin 10.11.6",
+    "owner": "LENTIS80",
+    "category": "Books",
+    "versions": [
+      {
+        "version": "0.6.0.0",
+        "changelog": "Čtečka CBZ s načítáním jednotlivých stránek ze serveru místo stahování celého archivu. Dvě stránky dopředu, pokračování na uložené stránce, směr zprava doleva, skok na stránku a původní čtečka jako alternativa. Po aktualizaci restartujte Jellyfin a obnovte web přes Ctrl+F5; u starších svazků bez průběhu obnovte metadata. Pro serverem poskytovaný Jellyfin Web 10.11.6.",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/LENTIS80/jellyfin-plugins/releases/download/manga-v0.6.0.0/Jellyfin.Plugin.Manga_0.6.0.0.zip",
+        "checksum": "4c6a2054d1b24badaadddb0d483a91df",
+        "timestamp": "2026-10-26T13:16:37.9367263Z"
+      }
+    ]
+  }
+}
+
