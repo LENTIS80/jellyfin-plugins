@@ -1,0 +1,23 @@
+{
+  "tag": "manga-v0.7.0.0",
+  "assetName": "Jellyfin.Plugin.Manga_0.7.0.0.zip",
+  "sha256": "f4a9088d6f0b79f5c1a1a6f654a140019e15d8a326f1f6d3f70323d7aa1a1bed",
+  "plugin": {
+    "guid": "9ef85dfa-392c-4d3f-8c89-60edbfd72e81",
+    "name": "Manga",
+    "description": "Local CBZ metadata, covers and AniList matching for manga.",
+    "overview": "Manga for Jellyfin 10.11.6",
+    "owner": "LENTIS80",
+    "category": "Books",
+    "versions": [
+      {
+        "version": "0.7.0.0",
+        "changelog": "Native Jellyfin progress bars on manga covers and cards; integrated reading actions and series resume.",
+        "targetAbi": "10.11.6.0",
+        "sourceUrl": "https://github.com/LENTIS80/jellyfin-plugins/releases/download/manga-v0.7.0.0/Jellyfin.Plugin.Manga_0.7.0.0.zip",
+        "checksum": "3a90a7c94b43fa8f4851a7210acc0a88",
+        "timestamp": "2026-10-26T13:42:52.3678757Z"
+      }
+    ]
+  }
+}
