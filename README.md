@@ -15,15 +15,23 @@ Po přidání přepněte filtr pluginů z „Nainstalováno“ na „Dostupné�
 
 | Plugin | Verze | Jellyfin | Popis |
 | --- | --- | --- | --- |
-| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.5.0.0) | 0.5.0.0 | 10.11.6 | CBZ metadata, AniList, detail série, průběh čtení a pokračování |
+| [Manga](https://github.com/LENTIS80/jellyfin-plugins/releases/tag/manga-v0.6.0.0) | 0.6.0.0 | 10.11.6 | CBZ metadata, AniList, detail série a čtení po stránkách s uloženou pozicí |
 
 Ve verzi 0.2.1.0 stačí v nastavení Manga zaškrtnout existující knihovnu typu Knihy. Cesty se přebírají automaticky z Jellyfinu, včetně více složek a pozdějších změn. Starší ručně zadané cesty zůstávají zachované v pokročilém nastavení; po výběru knihovny je lze vymazat. Bez výběru knihovny i bez ručních cest se soubory nezpracovávají. Po aktualizaci restartujte Jellyfin a obnovte stránku nastavení.
 
 Verze 0.2.1.0 opravuje chybu `toLowerCase is not a function` při načítání knihoven. Po aktualizaci a restartu obnovte nastavení pomocí Ctrl+F5.
 
-Ověřeno 45 automatickými testy pluginu, šesti testy formuláře, výběru rozčteného svazku a skutečného webu na odděleném Jellyfinu 10.11.6. Živé testy zahrnují otevření série, pořadí svazků, uložení stránky a pokračování v novém okně prohlížeče. Ověřeno také oddělení pozic mezi uživateli. Uživatelský server se aktualizuje přes katalog. Čtení zajišťuje vestavěná čtečka Jellyfinu.
+Ověřeno 50 testy pluginu a sedmi testy formuláře, výběru rozčteného svazku a skutečného webu na odděleném Jellyfinu 10.11.6. Živé testy zahrnují původní i novou čtečku, pokračování v novém okně, požadavky jen na aktuální a blízké stránky a zachování záložky při chybě. Samostatně ověřeno odmítnutí nepřihlášeného uživatele a uživatele bez přístupu do knihovny i zobrazení na mobilní šířce. Uživatelský server se aktualizuje přes katalog.
 
 Pro knihovnu typu Knihy povolte Manga CBZ, Manga AniList a Manga CBZ cover. Ručně upravená metadata zamkněte v editoru Jellyfinu. Podrobný návod je v README uvnitř instalačního ZIPu.
+
+## Čtení po stránkách ve verzi 0.6.0.0
+
+Nová čtečka posílá ze serveru jednotlivé obrázky z CBZ. První stránka se otevře bez stahování a rozbalování celého archivu v prohlížeči. Po jejím zobrazení se připraví dvě následující stránky; mezipaměť drží nejvýše čtyři obrázky. Při skoku se nepotřebné přenosy zruší. Server CBZ nerozbaluje na disk.
+
+Použijte **Číst po stránkách** na detailu svazku, běžné tlačítko čtení nebo **Pokračovat ve čtení** na sérii. Ovládání nabízí šipky, číslo stránky, gesta, směr zprava doleva a přizpůsobení šířce. Pozice se ukládá až po úspěšném zobrazení stránky. Při chybě lze načtení zopakovat. **Původní čtečka** je nadále dostupná jako alternativa a stahuje celý soubor.
+
+Aktualizujte plugin, **restartujte Jellyfin a načtěte web přes Ctrl+F5**. U svazků, které ještě nemají průběh čtení z verze 0.5, jednou obnovte metadata. Platí pro web poskytovaný serverem Jellyfinu; nativní aplikace mají vlastní čtečky. Každý požadavek vyžaduje přihlášení a oprávnění k danému svazku. Podrobný návod a omezení jsou v README instalačního ZIPu.
 
 ## Průběh čtení ve verzi 0.5.0.0
 
@@ -42,7 +50,7 @@ V nastavení Manga zapněte **Seskupovat svazky podle složek sérií** a **Zobr
   Witch Hat Atelier v02.cbz
 ```
 
-Tato série obsahuje jen Vol. 2. Další svazky přidejte jako CBZ do stejné složky a znovu skenujte. Karty se řadí číselně (1, 2, 10); označení Vol. je na začátku názvu, aby se neztratilo zkrácením na malé kartě. Svazky mají vlastní obálky a dál se otevírají ve vestavěné čtečce.
+Tato série obsahuje jen Vol. 2. Další svazky přidejte jako CBZ do stejné složky a znovu skenujte. Karty se řadí číselně (1, 2, 10); označení Vol. je na začátku názvu, aby se neztratilo zkrácením na malé kartě. Svazky mají vlastní obálky; od verze 0.6 lze zvolit čtení po stránkách i původní čtečku.
 
 Zapnutý AniList doplní metadata série pomocí **Manga series AniList** a **Manga series AniList cover**. V běžné knihovně Knihy se použijí výchozí poskytovatelé kolekcí; pokud jste je ručně omezili, povolte tyto dva. Lokální obálku může doplnit **Manga series cover**.
 
